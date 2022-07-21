@@ -42,7 +42,7 @@
   "scripts": {
     "start": "lerna run start --parallel",
     "build": "lerna run build --parallel",
-    "test": "CI=true lerna run test --parallel",
+    "test": "lerna run test --parallel",
     "typecheck": "lerna run typecheck --parallel",
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
