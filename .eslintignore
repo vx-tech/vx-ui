@@ -1,0 +1,11 @@
+build/
+dist/
+node_modules/
+.snapshots/
+*.min.js
+*.css
+*.svg
+coverage
+.next
+build
+lib
