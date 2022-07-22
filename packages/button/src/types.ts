@@ -5,27 +5,32 @@ import {
   LayoutProps,
   ResponsiveValue,
   SpaceProps,
-} from '@vx-ui/system'
-import { ColorScheme as ButtonColorScheme } from '@vx-ui/theme'
+} from '@vx-ui/system';
+import { ColorScheme as ButtonColorScheme } from '@vx-ui/theme';
 
-export type ButtonSizes = 'xs' | 'sm' | 'md' | 'lg'
+export type ButtonSizes = 'xs' | 'sm' | 'md' | 'lg';
 
-export type ButtonVariants = 'link' | 'outline' | 'solid' | 'ghost' | 'unstyled'
+export type ButtonVariants =
+  | 'link'
+  | 'outline'
+  | 'solid'
+  | 'ghost'
+  | 'unstyled';
 
 export interface ButtonOptions {
   /**
    * The color scheme of the button.
    * @default "gray"
    * @type {ButtonColorScheme}
-   * @example
-   * ```jsx
+   *
    */
 
-  colorScheme?: ButtonColorScheme
+  colorScheme?: ButtonColorScheme;
   /**
    * Size of the button.
    * @default "md"
-   * one of: "xs" | "sm" | "md" | "lg"
+   *
+   * **Syntax**: "xs" | "sm" | "md" | "lg"
    *
    * @example
    * ```jsx
@@ -33,19 +38,20 @@ export interface ButtonOptions {
    * ```
    *
    */
-  s?: ResponsiveValue<ButtonSizes>
+  s?: ResponsiveValue<ButtonSizes>;
 
   /**
    * Variant of the button.
    * @default "solid"
-   * one of: "link" | "outline" | "solid" | "ghost" | "unstyled"
+   * **Syntax**: `link | outline | solid | ghost> | unstyled`
+   * : "" | "" | "" | "" | ""
    * @example
    * ```jsx
    * <Button variant="solid">Solid Button</Button>
    * ```
    *
    */
-  variant?: ResponsiveValue<ButtonVariants>
+  variant?: ResponsiveValue<ButtonVariants>;
 
   /**
    * Show a spinner if the button is loading.
@@ -53,7 +59,7 @@ export interface ButtonOptions {
    * @example
    *
    */
-  isLoading?: boolean
+  isLoading?: boolean;
 
   /**
    * if true, the button will take the full width of its parent container.
@@ -64,7 +70,7 @@ export interface ButtonOptions {
    * <Button isFullWidth>Full Width Button</Button>
    * ```
    */
-  isFullWidth?: boolean
+  isFullWidth?: boolean;
   /**
    * leftIcon to be displayed on the left side of the button.
    * @default null
@@ -73,7 +79,7 @@ export interface ButtonOptions {
    * <Button leftIcon={<Icon name="arrow-left" />}>Left Icon Button</Button>
    * ```
    */
-  leftIcon?: React.ReactElement
+  leftIcon?: React.ReactElement;
   /**
    * rightIcon to be displayed on the left side of the button.
    * @default null
@@ -82,17 +88,17 @@ export interface ButtonOptions {
    * <Button rightIcon={<Icon name="arrow-left" />}>Left Icon Button</Button>
    * ```
    */
-  rightIcon?: React.ReactElement
+  rightIcon?: React.ReactElement;
 
-  iconSpacing?: SpaceProps['marginRight']
+  iconSpacing?: SpaceProps['marginRight'];
 
-  isDisabled?: boolean
-  isActive?: boolean
+  isDisabled?: boolean;
+  isActive?: boolean;
 
-  loadingText?: string
+  loadingText?: string;
 
-  spinner?: React.ReactElement
-  spinnerPlacement?: 'start' | 'end'
+  spinner?: React.ReactElement;
+  spinnerPlacement?: 'start' | 'end';
 }
 
 export type ButtonProps = ColorProps &
@@ -101,22 +107,22 @@ export type ButtonProps = ColorProps &
   LayoutProps &
   ButtonOptions &
   SpaceProps &
-  React.ComponentPropsWithoutRef<'button'> & { children?: React.ReactNode }
+  React.ComponentPropsWithoutRef<'button'> & { children?: React.ReactNode };
 
 export type ButtonContentProps = Pick<
   ButtonProps,
   'leftIcon' | 'rightIcon' | 'children' | 'iconSpacing'
->
+>;
 
 type Omitted =
   | 'leftIcon'
   | 'isFullWidth'
   | 'rightIcon'
   | 'loadingText'
-  | 'iconSpacing'
+  | 'iconSpacing';
 
 export interface IconButtonProps extends Omit<ButtonProps, Omitted> {
-  icon?: React.ReactElement
-  isRound?: boolean
-  'aria-label': string
+  icon?: React.ReactElement;
+  isRound?: boolean;
+  'aria-label': string;
 }

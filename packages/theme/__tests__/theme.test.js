@@ -1,7 +1,5 @@
-'use strict'
-
-const theme = require('..')
+const theme = require('..');
 
 describe('@vx-ui/theme', () => {
-  it('needs tests')
-})
+  it('needs tests');
+});

@@ -12,7 +12,25 @@ import {
   fontSize,
   layout,
   space,
-} from 'styled-system'
+  AlignSelfProps,
+  FlexBasisProps,
+  FlexGrowProps,
+  FlexProps,
+  FlexShrinkProps,
+  JustifySelfProps,
+  PositionProps,
+  ShadowProps,
+  TypographyProps,
+  typography,
+  shadow,
+  flex,
+  justifySelf,
+  alignSelf,
+  position,
+  system,
+  FlexboxProps,
+} from 'styled-system';
+import { props as sysProps } from '@styled-system/should-forward-prop';
 
 export type {
   BorderProps,
@@ -21,6 +39,32 @@ export type {
   LayoutProps,
   ResponsiveValue,
   SpaceProps,
-}
+  AlignSelfProps,
+  FlexBasisProps,
+  FlexGrowProps,
+  FlexProps,
+  FlexShrinkProps,
+  JustifySelfProps,
+  PositionProps,
+  ShadowProps,
+  TypographyProps,
+  FlexboxProps,
+};
 
-export { variant, compose, border, color, fontSize, layout, space }
+export {
+  variant,
+  system,
+  compose,
+  sysProps,
+  border,
+  color,
+  fontSize,
+  layout,
+  space,
+  typography,
+  shadow,
+  flex,
+  justifySelf,
+  alignSelf,
+  position,
+};

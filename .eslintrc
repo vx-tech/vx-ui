@@ -6,6 +6,7 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
+    "plugin:import/typescript",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/eslint-recommended"
   ],
@@ -16,7 +17,10 @@
   "parser": "@typescript-eslint/parser",
   "settings": {
     "import/resolver": {
-      "typescript": {}
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
     }
   },
   "parserOptions": {
@@ -47,8 +51,9 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "import/extensions": [
       "error",
-      "ignorePackages",
+      "never",
       {
+        "ignorePackages": true,
         "js": "never",
         "jsx": "never",
         "ts": "never",
@@ -59,6 +64,30 @@
       "error",
       {
         "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"]
+      }
+    ],
+    "react/require-default-props": [
+      0,
+      {
+        "forbidDefaultForRequired": false,
+        "classes": "ignore",
+        "functions": "ignore"
+      }
+    ],
+    "react/function-component-definition": [
+      0,
+      {
+        "namedComponents": [
+          "function-declaration",
+          "function-expression",
+          "arrow-function"
+        ],
+        "unnamedComponents": [
+          "function-expression",
+          "arrow-function",
+          "function-expression",
+          "arrow-function"
+        ]
       }
     ]
   }

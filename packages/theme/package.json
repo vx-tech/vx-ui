@@ -17,11 +17,16 @@
   "publishConfig": {
     "access": "public"
   },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^5.3.5"
+  },
   "scripts": {
     "start": "tsc -p tsconfig.json -w",
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json",
-    "lint": "eslint . --ignore-path ../../.eslintignore --ext ts --ext tsx --ext js --ext jsx",
-    "lint:fix": "eslint --fix . --ignore-path ../../.eslintignore --ext ts --ext tsx --ext js --ext jsx"
+    "lint": "eslint . --ignore-path ../../.eslintignore",
+    "lint:fix": "eslint --fix . --ignore-path ../../.eslintignore"
   }
 }

@@ -1,7 +1,5 @@
-'use strict'
-
-const system = require('..')
+const system = require('..');
 
 describe('@vx-ui/system', () => {
-  it('needs tests')
-})
+  it('needs tests');
+});

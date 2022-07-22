@@ -100,3 +100,7 @@ yarn-error.log
 .yarn-integrity
 
 report.*
+
+# Package JSON Build
+package-lock.json
+yarn.lock
