@@ -1,1 +1,1 @@
-export * from './variantCompiler'
+export * from './variantCompiler';

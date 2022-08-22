@@ -1,15 +1,15 @@
-import * as React from 'react'
+import * as React from 'react';
+import { Box, BoxProps } from '@vx-ui/layout';
 
-interface ButtonSpinnerProps {
-  label?: string
-  placement?: 'start' | 'end'
-  children?: React.ReactNode
+interface ButtonSpinnerProps extends BoxProps {
+  label?: string;
+  placement?: 'start' | 'end';
 }
 
-export const ButtonSpinner = (props: ButtonSpinnerProps) => {
-  const { label, placement, children = <p>Spinner</p>, ...rest } = props
+export function ButtonSpinner(props: ButtonSpinnerProps) {
+  const { label, placement, children = <p>Spinner</p>, ...rest } = props;
 
-  const marginProp = placement === 'start' ? 'marginRight' : 'marginLeft'
+  const marginProp = placement === 'start' ? 'marginRight' : 'marginLeft';
 
   const spinnerStyles = {
     display: 'flex',
@@ -18,7 +18,11 @@ export const ButtonSpinner = (props: ButtonSpinnerProps) => {
     alignItems: 'center',
     position: label ? 'relative' : 'absolute',
     [marginProp]: label ? '0.5rem' : 0,
-  }
+  };
 
-  return <div>{children}</div>
+  return (
+    <Box {...spinnerStyles} {...rest}>
+      {children}
+    </Box>
+  );
 }

@@ -8,17 +8,17 @@ export const spacing = {
   xxl: '2.4rem',
   '3xl': '3rem',
   '4xl': '3.6rem',
-}
+};
 
 export const spacingOptions = () => {
-  const options = Object.keys(spacing)
+  const options = Object.keys(spacing);
   const labels = Object.entries(spacing).reduce((acc, [key, value]) => {
-    //@ts-ignore
-    acc[key] = `${key} (${value})`
-    return acc
-  }, {})
+    // @ts-ignore
+    acc[key] = `${key} (${value})`;
+    return acc;
+  }, {});
 
-  return { options, labels }
-}
+  return { options, labels };
+};
 
-export type Space = typeof spacing
+export type Space = typeof spacing;

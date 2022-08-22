@@ -1,4 +1,4 @@
-import { ColorScheme as ButtonColorScheme } from '@vx-ui/theme'
+import { ColorScheme as ButtonColorScheme } from '@vx-ui/theme';
 
 export const variantGhost = (colorScheme: ButtonColorScheme) => {
   if (colorScheme === 'gray') {
@@ -10,7 +10,7 @@ export const variantGhost = (colorScheme: ButtonColorScheme) => {
       '&:active': {
         bg: 'gray200',
       },
-    }
+    };
   }
   return {
     color: `${colorScheme}600`,
@@ -21,16 +21,16 @@ export const variantGhost = (colorScheme: ButtonColorScheme) => {
     '&:active': {
       bg: `${colorScheme}100`,
     },
-  }
-}
+  };
+};
 
 export const variantOutline = (colorScheme: ButtonColorScheme) => {
   return {
     border: '1px solid',
     borderColor: colorScheme === 'gray' ? 'gray200' : 'currentColor',
     ...variantGhost(colorScheme),
-  }
-}
+  };
+};
 
 export const variantSolid = (colorScheme: ButtonColorScheme) => {
   const accessibleColorMap = {
@@ -46,7 +46,7 @@ export const variantSolid = (colorScheme: ButtonColorScheme) => {
       hoverBg: 'cyan500',
       activeBg: 'cyan600',
     },
-  }
+  };
 
   if (colorScheme === 'gray') {
     return {
@@ -56,15 +56,15 @@ export const variantSolid = (colorScheme: ButtonColorScheme) => {
         '&:disabled': { bg: 'gray100' },
       },
       '&:active': { bg: 'gray300' },
-    }
+    };
   }
   const {
     background = `${colorScheme}400`,
     componentColor = 'white',
     hoverBg = `${colorScheme}600`,
     activeBg = `${colorScheme}700`,
-    //@ts-ignore
-  } = accessibleColorMap[colorScheme] || {}
+    // @ts-ignore
+  } = accessibleColorMap[colorScheme] || {};
 
   return {
     bg: background,
@@ -76,8 +76,8 @@ export const variantSolid = (colorScheme: ButtonColorScheme) => {
     '&:active': {
       bg: activeBg,
     },
-  }
-}
+  };
+};
 
 export const variantLink = (colorScheme: ButtonColorScheme) => {
   return {
@@ -96,8 +96,8 @@ export const variantLink = (colorScheme: ButtonColorScheme) => {
     '&:active': {
       color: `${colorScheme}700`,
     },
-  }
-}
+  };
+};
 
 export const variantUnStyled = () => {
   return {
@@ -107,8 +107,8 @@ export const variantUnStyled = () => {
     lineHeight: 'inherit',
     margin: 0,
     p: 0,
-  }
-}
+  };
+};
 
 export const variantSizes = () => {
   return {
@@ -140,5 +140,5 @@ export const variantSizes = () => {
       paddingLeft: 'xs',
       paddingRight: 'xs',
     },
-  }
-}
+  };
+};

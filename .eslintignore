@@ -9,3 +9,7 @@ coverage
 .next
 build
 lib
+*.test.ts
+__stories__
+*.test.js
+*.stories.js

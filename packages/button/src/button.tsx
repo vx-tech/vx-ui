@@ -5,12 +5,12 @@ import {
   fontSize,
   layout,
   space,
-  variant,
-} from '@vx-ui/system'
-import * as React from 'react'
-import styled from 'styled-components'
-import { ButtonIcon } from './button-icon'
-import { ButtonSpinner } from './button-spinner'
+  variant as variantTheme,
+} from '@vx-ui/system';
+import * as React from 'react';
+import styled from 'styled-components';
+import { ButtonIcon } from './button-icon';
+import { ButtonSpinner } from './button-spinner';
 import {
   variantGhost,
   variantLink,
@@ -18,8 +18,8 @@ import {
   variantSizes,
   variantSolid,
   variantUnStyled,
-} from './helpers'
-import { ButtonContentProps, ButtonProps } from './types'
+} from './helpers';
+import { ButtonContentProps, ButtonProps } from './types';
 
 export const BaseButton = styled.button<ButtonProps>`
   border: none;
@@ -61,7 +61,7 @@ export const BaseButton = styled.button<ButtonProps>`
   }
 
   ${({ colorScheme = 'gray' }) =>
-    variant({
+    variantTheme({
       prop: 'variant',
       variants: {
         link: variantLink(colorScheme),
@@ -72,25 +72,25 @@ export const BaseButton = styled.button<ButtonProps>`
       },
     })}
 
-  ${variant({
+  ${variantTheme({
     prop: 's',
     variants: variantSizes(),
   })}
   
 
   ${compose(color, border, layout, space, fontSize)}
-`
+`;
 
 const ButtonContent = (props: ButtonContentProps) => {
-  const { leftIcon, rightIcon, children, iconSpacing } = props
+  const { leftIcon, rightIcon, children, iconSpacing } = props;
   return (
     <React.Fragment>
       {leftIcon && <ButtonIcon mr={iconSpacing}>{leftIcon}</ButtonIcon>}
       {children}
       {rightIcon && <ButtonIcon ml={iconSpacing}>{rightIcon}</ButtonIcon>}
     </React.Fragment>
-  )
-}
+  );
+};
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
@@ -111,9 +111,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       iconSpacing = '0.5rem',
 
       ...rest
-    } = props
+    } = props;
 
-    const contentProps = { rightIcon, leftIcon, iconSpacing, children }
+    const contentProps = { rightIcon, leftIcon, iconSpacing, children };
 
     return (
       <BaseButton
@@ -146,6 +146,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           </ButtonSpinner>
         )}
       </BaseButton>
-    )
+    );
   },
-)
+);

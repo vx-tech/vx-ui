@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 export const typography = {
   letterSpacings: {
     tighter: '-0.05em',
@@ -59,20 +60,20 @@ export const typography = {
     body: `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     mono: `SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace`,
   },
-}
+};
 
 export const fontSizesOptions = () => {
-  const options = Object.keys(typography.fontSizes)
+  const options = Object.keys(typography.fontSizes);
   const labels = Object.entries(typography.fontSizes).reduce(
     (acc, [key, value]) => {
-      //@ts-ignore
-      acc[key] = `${key} (${value})`
-      return acc
+      // @ts-ignore
+      acc[key] = `${key} (${value})`;
+      return acc;
     },
     {},
-  )
+  );
 
-  return { options, labels }
-}
+  return { options, labels };
+};
 
-export type Typography = typeof typography
+export type Typography = typeof typography;
