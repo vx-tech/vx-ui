@@ -13,7 +13,12 @@ import {
   SpaceProps,
   TypographyProps,
   FlexboxProps,
+  GridProps as StyledGridProps,
   ResponsiveValue,
+  AlignContentProps,
+  AlignItemsProps,
+  JustifyContentProps,
+  JustifyItemsProps,
 } from '@vx-ui/system';
 
 type BoxOptions = {
@@ -82,3 +87,59 @@ export interface HStackProps extends Omit<StackProps, 'direction'> {
 export interface VStackProps extends Omit<StackProps, 'direction'> {
   direction?: 'column' | 'column-reverse';
 }
+
+// GRID Options | Props
+
+export type GridOmitted = 'display';
+
+export type GridOptions = {
+  templateColumns?: StyledGridProps['gridTemplateColumns'];
+  rowGap?: StyledGridProps['gridRowGap'];
+  columnGap?: StyledGridProps['gridColumnGap'];
+  gap?: StyledGridProps['gridGap'];
+  autoFlow?: StyledGridProps['gridAutoFlow'];
+  autoRows?: StyledGridProps['gridAutoRows'];
+  autoColumns?: StyledGridProps['gridAutoColumns'];
+  templateRows?: StyledGridProps['gridTemplateRows'];
+  templateAreas?: StyledGridProps['gridTemplateAreas'];
+  area?: StyledGridProps['gridArea'];
+  column?: StyledGridProps['gridColumn'];
+  row?: StyledGridProps['gridRow'];
+  align?: AlignItemsProps['alignItems'];
+  justify?: JustifyItemsProps['justifyItems'];
+};
+
+export type BaseGridProps = GridOptions &
+  BoxProps &
+  AlignContentProps &
+  JustifyContentProps;
+
+export interface GridProps extends Omit<BaseGridProps, GridOmitted> {}
+
+export type GridItemSpanValue = ResponsiveValue<number | 'auto'>;
+
+export type GridItemOptions = {
+  colSpan?: GridItemSpanValue;
+  colStart?: GridItemSpanValue;
+  colEnd?: GridItemSpanValue;
+  rowStart?: GridItemSpanValue;
+  rowEnd?: GridItemSpanValue;
+  rowSpan?: GridItemSpanValue;
+};
+
+export interface GridItemProps extends BaseGridItemProps {}
+
+export type BaseGridItemProps = GridItemOptions &
+  BoxProps &
+  AlignSelfProps &
+  JustifySelfProps;
+
+export interface SimpleGridOptions {
+  minChildWidth?: GridProps['minWidth'];
+  columns?: ResponsiveValue<number>;
+  spacing?: GridProps['gap'];
+  spacingX?: GridProps['gap'];
+  spacingY?: GridProps['gap'];
+}
+
+export interface SimpleGridProps extends GridProps, SimpleGridOptions {}

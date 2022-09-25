@@ -1,12 +1,12 @@
 {
-  "name": "@vx-ui/button",
+  "name": "@vx-ui/testing-utils",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "vickzuzo <vickzuzo@gmail.com>",
   "homepage": "https://github.com/vx-tech/vx-ui#readme",
+  "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "license": "MIT",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -17,32 +17,36 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "start": "tsc -p tsconfig.json -w",
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json",
-    "lint": "eslint . --ignore-path ../../.eslintignore",
-    "lint:fix": "eslint --fix . --ignore-path ../../.eslintignore"
-  },
-  "devDependencies": {
-    "@vx-ui/layout": "^1.0.0",
-    "@vx-ui/testing-utils": "^1.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/vx-tech/vx-ui/issues"
-  },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^5.3.5"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vx-tech/vx-ui.git"
   },
+  "scripts": {
+    "start": "tsc -p tsconfig.json -w",
+    "build": "tsc -p tsconfig.json",
+    "test": "jest --config ../../jest.config.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint . --ignore-path ../../.eslintignore",
+    "lint:fix": "eslint --fix . --ignore-path ../../.eslintignore"
+  },
+  "bugs": {
+    "url": "https://github.com/vx-tech/vx-ui/issues"
+  },
   "dependencies": {
-    "@vx-ui/layout": "^1.0.0",
-    "@vx-ui/system": "^1.0.0",
-    "@vx-ui/theme": "^1.0.0"
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.3.0",
+    "@types/jest-axe": "^3.5.4",
+    "@vx-ui/theme": "^1.0.0",
+    "@vx-ui/provider": "^1.0.0",
+    "jest-axe": "^6.0.0",
+    "react-test-renderer": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "react": "^18.0.0"
   }
 }

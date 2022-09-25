@@ -6,6 +6,7 @@
 node_modules/
 npm-debug.log
 packages/**/lib
+packages/**/dist
 packages/**/.next
 storybook-static
 packages/**/coverage

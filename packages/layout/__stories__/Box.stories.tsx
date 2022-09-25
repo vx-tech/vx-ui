@@ -13,7 +13,7 @@ export default {
 
 export const Default = {
   render: (args: BoxProps) => (
-    <Box bg='red500' color='black' p='md' {...args}>
+    <Box bg='red500' color='blacks.3' p='md' {...args}>
       Hello Component Library.
     </Box>
   ),

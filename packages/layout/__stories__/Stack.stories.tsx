@@ -1,42 +1,126 @@
 import { ComponentMeta } from '@storybook/react';
 import * as React from 'react';
-import { Box, Flex, FlexBaseProps, Spacer } from '../src';
+import {
+  Box,
+  Flex,
+  FlexBaseProps,
+  HStack,
+  HStackProps,
+  Spacer,
+  Stack,
+  StackProps,
+  VStack,
+  VStackProps,
+} from '../src';
+import { spacingOptions } from '@vx-ui/theme';
+
+const spacingSelect = {
+  name: 'spacing',
+  type: { name: 'string', required: false },
+  defaultValue: 'lg',
+  description: 'The gap between stack items.',
+  table: {
+    type: { summary: 'string' },
+    defaultValue: { summary: 'md' },
+  },
+  control: {
+    type: 'select',
+    ...spacingOptions(),
+  },
+};
+
+const alignSelect = {
+  name: 'align',
+  type: { name: 'string', required: false },
+  defaultValue: 'center',
+  description: 'Shorthand for alignItems style prop',
+  table: {
+    type: { summary: 'string' },
+    defaultValue: { summary: 'center' },
+  },
+  control: {
+    type: 'select',
+    options: [
+      'stretch',
+      'center',
+      'flex-start',
+      'flex-end',
+      'baseline',
+      'initial',
+      'inherit',
+    ],
+  },
+};
 
 export default {
-  title: '@vx-ui/Layout/Flex',
+  title: '@vx-ui/Layout/Stack',
   component: Flex,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    direction: {
+      name: 'direction',
+      type: { name: 'string', required: false },
+      defaultValue: 'row',
+      description: 'Shorthand for flexDirection style prop',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'row' },
+      },
+      control: {
+        type: 'select',
+        options: ['row', 'row-reverse', 'column', 'column-reverse'],
+      },
+    },
+    spacing: spacingSelect,
+    align: alignSelect,
   },
 } as ComponentMeta<typeof Flex>;
 
-export const Default = {
-  render: (args: FlexBaseProps) => (
-    <Flex justify='space-between' color='white' {...args}>
-      <Box size='100px' bg='green500'>
-        Box 1
+export const DefaultStack = {
+  render: (args: StackProps) => (
+    <Stack {...args}>
+      <Box p='md' bg='yellow200'>
+        1
       </Box>
-      <Box size='100px' bg='blue500'>
-        Box 2
+      <Box p='md' bg='tomato'>
+        2
       </Box>
-      <Box basis='300px' size='100px' bg='cyan500'>
-        Box 3
+      <Box p='md' bg='blacks.4'>
+        3
       </Box>
-    </Flex>
+    </Stack>
   ),
 };
 
-export const FlexSpacer = {
-  render: (args: FlexBaseProps) => (
-    <Flex h='80vh' color='white' {...args}>
-      <Box size='100px' p='md' bg='red400'>
-        Box 1
+export const horizontalStack = {
+  render: (args: HStackProps) => (
+    <HStack h='50vh' {...args}>
+      <Box p='md' bg='yellow200'>
+        1
       </Box>
-      <Spacer />
-      <Box size='100px' p='md' bg='green400'>
-        Box 2
+      <Box p='md' bg='tomato'>
+        2
       </Box>
-    </Flex>
+      <Box p='md' bg='blacks.4'>
+        3
+      </Box>
+    </HStack>
+  ),
+};
+
+export const verticalStack = {
+  render: (args: VStackProps) => (
+    <VStack {...args}>
+      <Box p='md' bg='yellow200'>
+        1
+      </Box>
+      <Box p='md' bg='tomato'>
+        2
+      </Box>
+      <Box p='md' bg='blacks.4'>
+        3
+      </Box>
+    </VStack>
   ),
 };

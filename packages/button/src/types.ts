@@ -44,7 +44,7 @@ export interface ButtonOptions {
    * Variant of the button.
    * @default "solid"
    * **Syntax**: `link | outline | solid | ghost> | unstyled`
-   * : "" | "" | "" | "" | ""
+   *
    * @example
    * ```jsx
    * <Button variant="solid">Solid Button</Button>
@@ -57,7 +57,9 @@ export interface ButtonOptions {
    * Show a spinner if the button is loading.
    * @default false
    * @example
-   *
+   * ```jsx
+   * <Button isLoading variant="solid">Solid Button</Button>
+   * ```
    */
   isLoading?: boolean;
 
@@ -91,12 +93,30 @@ export interface ButtonOptions {
   rightIcon?: React.ReactElement;
 
   iconSpacing?: SpaceProps['marginRight'];
-
+  /**
+   * rightIcon to be displayed on the left side of the button.
+   * @default false
+   * @example
+   * ```jsx
+   * <Button rightIcon={<Icon name="arrow-left" />}>Left Icon Button</Button>
+   * ```
+   */
   isDisabled?: boolean;
   isActive?: boolean;
 
   loadingText?: string;
 
+  /**
+   * Replace default spinner component.
+   * @default false
+   *
+   * @example
+   * ```jsx
+   * <Button spinner={<BounceDotsLoader />}>Full Width Button</Button>
+   * ```
+   * @types {React.ReactElement}
+   *
+   */
   spinner?: React.ReactElement;
   spinnerPlacement?: 'start' | 'end';
 }

@@ -29,6 +29,11 @@ import {
   position,
   system,
   FlexboxProps,
+  AlignContentProps,
+  AlignItemsProps,
+  JustifyContentProps,
+  JustifyItemsProps,
+  GridProps,
 } from 'styled-system';
 import { props as sysProps } from '@styled-system/should-forward-prop';
 
@@ -49,6 +54,11 @@ export type {
   ShadowProps,
   TypographyProps,
   FlexboxProps,
+  GridProps,
+  AlignContentProps,
+  AlignItemsProps,
+  JustifyContentProps,
+  JustifyItemsProps,
 };
 
 export {
